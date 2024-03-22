@@ -26,3 +26,21 @@ while True:
     except:
         print('Something went wrong.')
 
+question = 'Please enter a number greater than zero: '
+print(f'{'- '*len(question)}')
+
+while True:
+    try:
+        my_num = int(input(question))
+        if  my_num < 1:
+            raise ValueError('Must enter a number greater than zero.')
+        
+        print(f'100 / {my_num} = {100/my_num}')
+        break #end of the loop
+    except ValueError as ex:
+        print(f'{ex}\n')
+    except ZeroDivisionError:
+        print('You cannot divide by zero.')
+    except ex:
+        print(f'{ex}\n')
+        
