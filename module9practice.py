@@ -17,7 +17,12 @@
 while True:
     try:
         my_num = int(input('Please enter a number: '))
-        print(f'{my_num} + 1 = {my_num + 1}')
-        break
-    except:
+        print(f'100 / {my_num} = {100/my_num}')
+        break #end of the loop
+    except ValueError:
         print('You did not enter a number. Please try again.\n')
+    except ZeroDivisionError:
+        print('You cannot divide by zero.')
+    except:
+        print('Something went wrong.')
+
