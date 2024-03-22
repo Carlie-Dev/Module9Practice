@@ -29,6 +29,7 @@ while True:
 question = 'Please enter a number greater than zero: '
 print(f'{'- '*len(question)}')
 
+#custom exceptions
 while True:
     try:
         my_num = int(input(question))
@@ -43,4 +44,29 @@ while True:
         print('You cannot divide by zero.')
     except ex:
         print(f'{ex}\n')
-        
+
+print(print(f'{'- '*len(question)}'))
+ 
+#Custom error classes
+class NumberTooLarge(Exception):
+    def __init__(self,value):
+        self.value = value
+
+while True:
+    try:
+        my_num = int(input(question))
+        if  my_num < 1:
+            raise ValueError('Must enter a number greater than zero and below 1000.')
+        elif my_num > 999:
+            raise NumberTooLarge('Must enter number below 1000')
+
+        print(f'100 / {my_num} = {100/my_num}')
+        break #end of the loop
+    except ValueError as ex:
+        print(f'{ex}\n')
+    except ZeroDivisionError:
+        print('You cannot divide by zero.')
+    except Exception as ex:
+        print(f'{ex}\n')
+
+print(print(f'{'- '*len(question)}'))
